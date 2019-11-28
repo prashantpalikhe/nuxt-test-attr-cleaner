@@ -1,6 +1,6 @@
 {
   "name": "nuxt-test-attr-cleaner",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Nuxt module to clean up tests related attributes from production html",
   "main": "lib/index.js",
   "repository": "git@github.com:prashantpalikhe/nuxt-test-attr-cleaner.git",
