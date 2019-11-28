@@ -1,8 +1,8 @@
-# Axios perf module
+# Nuxt test attr cleaner
 
-Nuxt module to log performance timings for all axios requests made during SSR.
+While writing your tests, it's one of the best practices is to use `data-*` attributes to provide context to your selectors and insulate them from CSS or JS changes. However, they are not necessary in your production code and add bloat to your HTML.
 
-![Example](./example.jpg)
+This module strips all those attributes (user defined) when building the app for production.
 
 ## Usage
 
@@ -10,7 +10,15 @@ Include the module in your `nuxt.config.js`
 
 ```js
 module.exports = {
-  modules: ['nuxt-axios-perf'],
+  buildModules: [
+    [
+      "nuxt-test-attr-cleaner",
+      {
+        stripAttrs: process.env.STAGE === "production",
+        attrsList: ["data-test", "data-test-id"]
+      }
+    ]
+  ]
 };
 ```
 
